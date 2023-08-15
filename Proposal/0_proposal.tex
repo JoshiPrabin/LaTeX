@@ -2,8 +2,15 @@
 \usepackage{graphicx}
 \usepackage{titletoc}
 \usepackage{fancyhdr}
-\usepackage[a4paper, inner=1.5in, outer=1.25in, top=1.25in, bottom=1.25, left=1.5in, right=1in]{geometry}
+\usepackage{tocloft}
+\usepackage[a4paper, inner=1.5in, outer=1.25in, top=1.5in, bottom=1in, left=1.5in, right=1in]{geometry}
 \usepackage[onehalfspacing]{setspace}
+
+\usepackage{biblatex}
+\addbibresource{Proposal/references.bib}
+\defbibheading{mybibliography}[\refname]{%
+  \section*{\centering\MakeUppercase{\Large\bfseries #1}}%
+  \addcontentsline{toc}{section}{\MakeUppercase{#1}}}
 
 % Custom formatting for the table of contents title
 \renewcommand{\contentsname}{\centering\textbf{CONTENTS}}
@@ -28,6 +35,8 @@
 
 \include{Proposal/introduction}
 
+\include{Proposal/Literary_review}
+
 \include{Proposal/feasibility}
 
 \include{Proposal/methodology}
@@ -37,6 +46,7 @@
 \include{Proposal/result}
 
 \include{Proposal/limitations}
+\newpage
 
-
+\printbibliography[heading=mybibliography]
 \end{document}
